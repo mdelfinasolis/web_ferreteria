@@ -34,6 +34,12 @@ header nav ul {
     padding: 0;
 }
 
+header nav ul li a {
+    color: #363636;
+    font-weight: 500;
+    text-decoration: none;
+}
+
 header nav ul li a:hover {
     color: #FFC300;
 }
@@ -61,31 +67,6 @@ footer p {
     margin-bottom: 1rem;
 }
 
-/* 1. Limitamos el ancho máximo del carrusel */
-#carouselExampleDark {
-    max-width: 900px;  /* Ajustá este número al ancho real de tus imágenes */
-    margin: 0 auto;    /* Lo centra horizontalmente */
-    border-radius: 15px; /* Opcional: le da una terminación más prolija */
-    overflow: hidden;  /* Para que las imágenes respeten el redondeo anterior */
-}
-
-/* 2. Forzamos a la imagen a ser proporcional */
-.carousel-inner img {
-    width: 100%;       /* Ocupa el 100% de los 900px que definimos arriba */
-    height: auto;      /* Mantiene la proporción original (no la estira) */
-    display: block;
-}
-
-/* 3. Ajuste para que el texto no tape toda la imagen */
-.carousel-caption {
-    padding: 0.5rem;
-    bottom: 10%;       /* Lo separa un poco del borde inferior */
-}
-
-.carousel-caption h1 {
-    font-size: 1.8rem; /* Achicamos un poco el título para que no sea gigante */
-}
-
 /* SECCION: CONTACTO */
 
 .contacto {
@@ -97,6 +78,7 @@ footer p {
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-bottom: 2rem;
 }
 
 .portada-contacto h1 {
@@ -114,12 +96,18 @@ footer p {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     grid-template-areas:
+        "preguntas preguntas"
         "horarios formulario"
         "ubicacion formulario";
     gap: 2rem;
-    padding: 6rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+.preguntasFrecuentes {
+    grid-area: preguntas;
+}
 .horarios {
     grid-area: horarios;
 }
@@ -130,6 +118,40 @@ footer p {
 
 .consultas {
     grid-area: formulario;
+}
+
+.preguntasFrecuentes {
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid #f0f0f0;
+    padding: 2rem;
+}
+
+.preguntasFrecuentes .listaDesplegable {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0rem;
+    width: 100%;
+}
+
+.preguntasFrecuentes .accordion-button {
+    background-color: white;
+    color: #363636;
+    font-weight: 600;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.preguntasFrecuentes .accordion-body {
+    text-align: left;
+    padding: 0 1rem 1rem 1rem;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.preguntasFrecuentes .accordion-button:hover {
+    color: #FFC300;
+    background-color: white;
 }
 
 .horarios, .ubicacion {
@@ -151,7 +173,7 @@ footer p {
     text-align: center;
 }
 
-.horarios h2, .ubicacion h2, .consultas h2 {
+.preguntasFrecuentes h2, .horarios h2, .ubicacion h2, .consultas h2 {
     font-size: 1.5rem;
     color: #FFC300;
     margin-bottom: 2rem;
@@ -333,6 +355,21 @@ footer p {
     border: none;
 }
 
+/* SECCION: BOTON WHATSAPP */
+
+.whatsapp-btn {
+    background-color: none;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+}
+
+.whatsapp-btn img {
+    width: 45px;
+    height: auto;
+}
+
 /* MEDIA QUERIES */
 
 /* 481px - 768px */
@@ -451,6 +488,24 @@ footer p {
         padding: 2rem;
         gap: 2rem;
         align-items: center;
+    }
+
+    .preguntasFrecuentes .listaDesplegable {
+        grid-template-columns: 1fr; 
+        gap: 0rem; 
+    }
+
+    .preguntasFrecuentes h2 {
+        font-size: 1.2rem; 
+        margin-bottom: 1.5rem;
+    }
+
+    .preguntasFrecuentes .accordion-button {
+        font-size: 0.9rem;
+    }
+
+    .preguntasFrecuentes .accordion-body {
+        font-size: 0.85rem;
     }
 
     .horarios, .ubicacion, .consultas {
