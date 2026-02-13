@@ -1,0 +1,35 @@
+@use 'variables';
+
+/* Reset Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: variables.$fuente;
+    color: variables.$gris-oscuro;
+    text-decoration: none;
+}
+
+body {
+    background-color: variables.$color-fondo;
+}
+
+/* Boton Whatsapp */
+.whatsapp-btn {
+    background-color: none;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+    img {
+        width: 45px;
+        height: auto;
+    }
+
+    @media (max-width: variables.$mobile){
+        img {
+            width:40px;
+            height: auto;
+        }
+    }
+}

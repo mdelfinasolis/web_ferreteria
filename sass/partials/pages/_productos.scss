@@ -1,0 +1,78 @@
+@use '../variables';
+
+.prod {
+    @include variables.portada;
+}
+
+.filtros {
+    background-color: variables.$gris-claro;
+    padding: 1rem 0rem;
+    margin: 2rem 0rem 0rem 0rem;
+    text-align: center;
+
+    form {
+        @media (max-width: variables.$tablet) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            padding: 1rem;
+        }
+    }
+
+    label {
+        font-size: 1rem;
+        margin: 1rem;
+
+        @media (max-width: variables.$tablet) {
+            font-size: 0.8rem;
+            margin: 0;
+            grid-row: 1;
+        }
+    }
+    
+    select {
+        @media (max-width: variables.$tablet) {
+            width: 100%;
+            padding: 0.6rem;
+            font-size: 0.8rem;
+            grid-row: 2;
+        }
+    }
+
+    button {
+        @include variables.boton;
+        background-color: variables.$gris-oscuro;
+        color: variables.$blanco;
+
+        @media (max-width: variables.$tablet) {
+            grid-column: 1 / span 2;
+            grid-row: 3;
+            width: 100%;
+            margin: 1rem 0 0 0;
+            padding: 0.6rem;
+        }
+    }
+}
+
+.productos {
+    h2 {
+        @include variables.titulo;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+    .lista-productos {
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 18rem);
+        gap: 2rem;
+        justify-content: center;
+
+        @media (max-width: variables.$tablet) {
+            grid-template-columns: repeat(auto-fit, 12rem);
+        }
+
+        .tarjeta-producto {
+            @include variables.card;
+        }
+    }
+}

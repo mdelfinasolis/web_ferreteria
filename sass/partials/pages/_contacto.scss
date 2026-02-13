@@ -1,0 +1,174 @@
+@use '../variables';
+
+.contacto {
+    @include variables.portada;
+}
+
+.contacto-contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-areas:
+        "preguntas preguntas"
+        "horarios formulario"
+        "ubicacion formulario";
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .preguntasFrecuentes, .horarios, .ubicacion, .consultas {
+        @include variables.caja-blanca;
+        width: 100%;
+        box-sizing: border-box;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, max-width 0.5s ease; 
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+        }
+    }
+
+    @media (max-width: variables.$tablet) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .preguntasFrecuentes, .horarios, .ubicacion, .consultas {
+            max-width: 600px;
+        }
+    }
+
+    h2 {
+        @include variables.titulo;
+        color: variables.$amarillo;
+
+        @media (max-width: variables.$tablet) {
+            font-size: 1.2rem;
+        }
+    }
+
+    h3 {
+        @media (max-width: variables.$tablet) {
+            font-size: 1rem;
+        }
+    }
+
+    p {
+        @media (max-width: variables.$tablet) {
+            font-size: 0.9rem;
+        }
+    }
+
+    .preguntasFrecuentes {
+        grid-area: preguntas;
+
+        .listaDesplegable {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            width: 100%;
+
+            @media (max-width: variables.$tablet) {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .accordion-button {
+            background-color: variables.$blanco;
+            color: variables.$gris-oscuro;
+            font-weight: 600;
+            padding: 1rem;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            &:hover {
+                color: variables.$amarillo;
+                background-color: variables.$blanco;
+            }
+
+            @media (max-width: variables.$tablet) {
+                font-size: 0.9rem;
+            }
+        }
+
+        .accordion-body {
+            text-align: left;
+            padding: 0 1rem 1rem 1rem;
+            color: variables.$gris-oscuro;
+            font-size: 0.95rem;
+
+            @media (max-width: variables.$tablet) {
+                font-size: 0.85rem;
+            }
+        }
+    }
+
+    .horarios, .ubicacion, .consultas {
+        h3 {
+            font-size: 1.1rem;
+            color: variables.$gris-oscuro;
+            margin-top: 1rem;
+            margin-bottom: 0.2rem;
+        }
+    }
+
+    .horarios { 
+        grid-area: horarios; 
+    }
+    
+    .ubicacion {
+        grid-area: ubicacion;
+        iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+        }
+    }
+
+    .consultas {
+        grid-area: formulario;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        .formulario {
+            background-color: variables.$blanco;
+            padding: 1rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            
+            label {
+                @media (max-width: variables.$tablet) {
+                    font-size: 0.9rem;
+                }
+            }
+
+            input, textarea {
+                width: 100%;
+                padding: 0.8rem;
+                border: 1px solid variables.$gris-claro;
+                font-size: 1rem;
+                margin: 0.5rem 0rem;
+                transition: border-color 0.3s ease, outline 0.3s ease; 
+                &:focus-visible {
+                    outline: 3px solid variables.$amarillo;
+                    outline-offset: 2px;
+                    border-color: variables.$amarillo;
+                }
+            }
+
+            button {
+                @include variables.boton;
+                background-color: variables.$amarillo;
+                color: variables.$gris-oscuro;
+                transition: background-color 0.5s ease, transform 0.2s ease;
+
+                &:active {
+                    background-color: variables.$amarillo-sec;
+                    transform: scale(0.95);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,657 @@
+/* Reset Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Monserrat", sans-serif;
+  color: #363636;
+  text-decoration: none;
+}
+
+body {
+  background-color: #fdfdfd;
+}
+
+/* Boton Whatsapp */
+.whatsapp-btn {
+  background-color: none;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1000;
+}
+.whatsapp-btn img {
+  width: 45px;
+  height: auto;
+}
+@media (max-width: 480px) {
+  .whatsapp-btn img {
+    width: 40px;
+    height: auto;
+  }
+}
+
+header {
+  background-color: #fdfdfd;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 1rem;
+  }
+}
+@media (max-width: 768px) {
+  header img {
+    width: 240px;
+    height: auto;
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 480px) {
+  header img {
+    width: 160px;
+    height: auto;
+    margin-bottom: 0;
+  }
+}
+header nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+@media (max-width: 768px) {
+  header nav ul {
+    flex-direction: row;
+  }
+}
+@media (max-width: 480px) {
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+  }
+}
+header nav ul li a {
+  color: #363636;
+  font-weight: 400;
+  text-decoration: none;
+}
+header nav ul li a:hover {
+  color: #FFC300;
+}
+@media (max-width: 768px) {
+  header nav ul li a {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  header nav ul li a {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+}
+
+footer {
+  background-color: #363636;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  align-items: flex-start;
+}
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2.5rem;
+    padding: 2rem 0.6rem;
+  }
+}
+footer p {
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 768px) {
+  footer p {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 480px) {
+  footer p {
+    font-size: 0.8rem;
+  }
+}
+footer .titulo-footer {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+@media (max-width: 768px) {
+  footer .titulo-footer {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+}
+@media (max-width: 480px) {
+  footer .titulo-footer {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+}
+
+.contacto {
+  background-image: url("../../img/fondo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+@media (max-width: 768px) {
+  .contacto {
+    height: 50vh;
+  }
+}
+@media (max-width: 480px) {
+  .contacto {
+    height: 45vh;
+  }
+}
+.contacto h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #FFC300;
+}
+@media (max-width: 768px) {
+  .contacto h1 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .contacto h1 {
+    font-size: 1.6rem;
+  }
+}
+.contacto p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #ffffff;
+  padding: 0.4rem 0rem 1rem;
+}
+@media (max-width: 768px) {
+  .contacto p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .contacto p {
+    font-size: 0.9rem;
+  }
+}
+
+.contacto-contenedor {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-areas: "preguntas preguntas" "horarios formulario" "ubicacion formulario";
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.contacto-contenedor .preguntasFrecuentes, .contacto-contenedor .horarios, .contacto-contenedor .ubicacion, .contacto-contenedor .consultas {
+  background-color: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e0e0;
+  padding: 2rem;
+  width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, max-width 0.5s ease;
+}
+.contacto-contenedor .preguntasFrecuentes:hover, .contacto-contenedor .horarios:hover, .contacto-contenedor .ubicacion:hover, .contacto-contenedor .consultas:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+@media (max-width: 768px) {
+  .contacto-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .contacto-contenedor .preguntasFrecuentes, .contacto-contenedor .horarios, .contacto-contenedor .ubicacion, .contacto-contenedor .consultas {
+    max-width: 600px;
+  }
+}
+.contacto-contenedor h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .contacto-contenedor h2 {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 480px) {
+  .contacto-contenedor h2 {
+    font-size: 1.2rem;
+  }
+}
+.contacto-contenedor h2 {
+  color: #FFC300;
+}
+@media (max-width: 768px) {
+  .contacto-contenedor h2 {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 768px) {
+  .contacto-contenedor h3 {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .contacto-contenedor p {
+    font-size: 0.9rem;
+  }
+}
+.contacto-contenedor .preguntasFrecuentes {
+  grid-area: preguntas;
+}
+.contacto-contenedor .preguntasFrecuentes .listaDesplegable {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .contacto-contenedor .preguntasFrecuentes .listaDesplegable {
+    grid-template-columns: 1fr;
+  }
+}
+.contacto-contenedor .preguntasFrecuentes .accordion-button {
+  background-color: #ffffff;
+  color: #363636;
+  font-weight: 600;
+  padding: 1rem;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+.contacto-contenedor .preguntasFrecuentes .accordion-button:hover {
+  color: #FFC300;
+  background-color: #ffffff;
+}
+@media (max-width: 768px) {
+  .contacto-contenedor .preguntasFrecuentes .accordion-button {
+    font-size: 0.9rem;
+  }
+}
+.contacto-contenedor .preguntasFrecuentes .accordion-body {
+  text-align: left;
+  padding: 0 1rem 1rem 1rem;
+  color: #363636;
+  font-size: 0.95rem;
+}
+@media (max-width: 768px) {
+  .contacto-contenedor .preguntasFrecuentes .accordion-body {
+    font-size: 0.85rem;
+  }
+}
+.contacto-contenedor .horarios h3, .contacto-contenedor .ubicacion h3, .contacto-contenedor .consultas h3 {
+  font-size: 1.1rem;
+  color: #363636;
+  margin-top: 1rem;
+  margin-bottom: 0.2rem;
+}
+.contacto-contenedor .horarios {
+  grid-area: horarios;
+}
+.contacto-contenedor .ubicacion {
+  grid-area: ubicacion;
+}
+.contacto-contenedor .ubicacion iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+}
+.contacto-contenedor .consultas {
+  grid-area: formulario;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.contacto-contenedor .consultas .formulario {
+  background-color: #ffffff;
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+@media (max-width: 768px) {
+  .contacto-contenedor .consultas .formulario label {
+    font-size: 0.9rem;
+  }
+}
+.contacto-contenedor .consultas .formulario input, .contacto-contenedor .consultas .formulario textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #e0e0e0;
+  font-size: 1rem;
+  margin: 0.5rem 0rem;
+  transition: border-color 0.3s ease, outline 0.3s ease;
+}
+.contacto-contenedor .consultas .formulario input:focus-visible, .contacto-contenedor .consultas .formulario textarea:focus-visible {
+  outline: 3px solid #FFC300;
+  outline-offset: 2px;
+  border-color: #FFC300;
+}
+.contacto-contenedor .consultas .formulario button {
+  padding: 1rem;
+  font-size: 1rem;
+  border: none;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  color: white;
+  background-color: #FFC300;
+  color: #363636;
+  transition: background-color 0.5s ease, transform 0.2s ease;
+}
+.contacto-contenedor .consultas .formulario button:active {
+  background-color: #FFD700;
+  transform: scale(0.95);
+}
+
+.prod {
+  background-image: url("../../img/fondo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+@media (max-width: 768px) {
+  .prod {
+    height: 50vh;
+  }
+}
+@media (max-width: 480px) {
+  .prod {
+    height: 45vh;
+  }
+}
+.prod h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #FFC300;
+}
+@media (max-width: 768px) {
+  .prod h1 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .prod h1 {
+    font-size: 1.6rem;
+  }
+}
+.prod p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #ffffff;
+  padding: 0.4rem 0rem 1rem;
+}
+@media (max-width: 768px) {
+  .prod p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .prod p {
+    font-size: 0.9rem;
+  }
+}
+
+.filtros {
+  background-color: #e0e0e0;
+  padding: 1rem 0rem;
+  margin: 2rem 0rem 0rem 0rem;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .filtros form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+}
+.filtros label {
+  font-size: 1rem;
+  margin: 1rem;
+}
+@media (max-width: 768px) {
+  .filtros label {
+    font-size: 0.8rem;
+    margin: 0;
+    grid-row: 1;
+  }
+}
+@media (max-width: 768px) {
+  .filtros select {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 0.8rem;
+    grid-row: 2;
+  }
+}
+.filtros button {
+  padding: 1rem;
+  font-size: 1rem;
+  border: none;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  color: white;
+  background-color: #363636;
+  color: #ffffff;
+}
+@media (max-width: 768px) {
+  .filtros button {
+    grid-column: 1/span 2;
+    grid-row: 3;
+    width: 100%;
+    margin: 1rem 0 0 0;
+    padding: 0.6rem;
+  }
+}
+
+.productos h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .productos h2 {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 480px) {
+  .productos h2 {
+    font-size: 1.2rem;
+  }
+}
+.productos h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.productos .lista-productos {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 18rem);
+  gap: 2rem;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .productos .lista-productos {
+    grid-template-columns: repeat(auto-fit, 12rem);
+  }
+}
+.productos .lista-productos .tarjeta-producto {
+  background-color: #ffffff;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.productos .lista-productos .tarjeta-producto:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.productos .lista-productos .tarjeta-producto img {
+  width: 100%;
+  height: 15rem;
+}
+@media (max-width: 768px) {
+  .productos .lista-productos .tarjeta-producto img {
+    height: 10rem;
+    width: auto;
+  }
+}
+.productos .lista-productos .tarjeta-producto .info-producto {
+  padding: 1rem;
+}
+.productos .lista-productos .tarjeta-producto .info-producto p {
+  margin: 0.5rem 0rem;
+}
+@media (max-width: 768px) {
+  .productos .lista-productos .tarjeta-producto .info-producto p {
+    font-size: 0.8rem;
+  }
+}
+.productos .lista-productos .tarjeta-producto .info-producto .nombre {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .productos .lista-productos .tarjeta-producto .info-producto .nombre {
+    font-size: 1rem;
+  }
+}
+.productos .lista-productos .tarjeta-producto .info-producto .precio {
+  color: #FFC300;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .productos .lista-productos .tarjeta-producto .info-producto .precio {
+    font-size: 1.2rem;
+  }
+}
+
+.ofertas {
+  background-image: url("../../img/fondo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+@media (max-width: 768px) {
+  .ofertas {
+    height: 50vh;
+  }
+}
+@media (max-width: 480px) {
+  .ofertas {
+    height: 45vh;
+  }
+}
+.ofertas h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #FFC300;
+}
+@media (max-width: 768px) {
+  .ofertas h1 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .ofertas h1 {
+    font-size: 1.6rem;
+  }
+}
+.ofertas p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #ffffff;
+  padding: 0.4rem 0rem 1rem;
+}
+@media (max-width: 768px) {
+  .ofertas p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .ofertas p {
+    font-size: 0.9rem;
+  }
+}
+
+.productos {
+  text-align: center;
+}
+.productos h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .productos h2 {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 480px) {
+  .productos h2 {
+    font-size: 1.2rem;
+  }
+}
+.productos h2 {
+  color: #363636;
+  margin-bottom: 1rem;
+}
+
+/*# sourceMappingURL=estilos.css.map */

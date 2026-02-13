@@ -1,0 +1,14 @@
+@use '../variables';
+
+.ofertas {
+    @include variables.portada;
+}
+
+.productos {
+    text-align: center;
+    h2 {
+       @include variables.titulo;
+       color: variables.$gris-oscuro;
+       margin-bottom: 1rem;
+    }
+}

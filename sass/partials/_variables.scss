@@ -1,0 +1,148 @@
+//Colores
+$amarillo: #FFC300;
+$amarillo-sec: #FFD700;
+$color-fondo: #fdfdfd;
+$blanco: #ffffff;
+$gris-oscuro: #363636;
+$gris-claro: #e0e0e0;
+
+//Imagen de fondo
+$imagen-fondo: url("../../img/fondo.png");
+
+//Tipografía
+$fuente: "Monserrat", sans-serif;
+
+//Sombras
+$sombra-suave: 0 10px 30px rgba(0, 0, 0, 0.05);
+$sombra-tarjeta: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+
+//Mixins
+@mixin portada {
+    background-image: $imagen-fondo;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+
+    @media (max-width: $tablet) {
+        height: 50vh;
+    }
+    @media (max-width: $mobile) {
+        height: 45vh;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: $amarillo;
+
+        @media (max-width: $tablet) {
+            font-size: 2rem;
+        }
+        @media (max-width: $mobile) {
+            font-size: 1.6rem;
+        }
+    }
+    p {
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: $blanco;
+        padding: 0.4rem 0rem 1rem;
+
+        @media (max-width: $tablet) {
+            font-size: 1rem;
+        }
+        @media (max-width: $mobile) {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+@mixin caja-blanca {
+    background-color: $blanco;
+    box-shadow: $sombra-suave;
+    border: 1px solid $gris-claro;
+    padding: 2rem;
+    width: 100%;
+}
+
+@mixin titulo {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+
+    @media (max-width: $tablet) {
+        font-size: 1.4rem;
+    }
+    @media (max-width: $mobile) {
+        font-size: 1.2rem;
+    }
+}
+
+@mixin boton {
+    padding: 1rem;
+    font-size: 1rem;
+    border: none;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    color: white;
+}
+
+@mixin card {
+    background-color: $blanco;
+    text-align: center;
+    border: 1px solid $gris-claro;
+    box-shadow: $sombra-tarjeta;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    &:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    img {
+        width: 100%;
+        height: 15rem;
+
+        @media (max-width: $tablet) {
+            height: 10rem;
+            width: auto;
+        }
+    }
+
+    .info-producto {
+        padding: 1rem;
+        p {
+            margin: 0.5rem 0rem;
+
+            @media (max-width: $tablet) {
+                font-size: 0.8rem;
+            }
+        }
+        .nombre {
+            font-size: 1.2rem;
+            font-weight: 700;
+
+            @media (max-width: $tablet) {
+                font-size: 1rem;
+            }
+        }
+        .precio {
+            color: $amarillo;
+            font-size: 1.5rem;
+            font-weight: 700;
+
+            @media (max-width: $tablet) {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+//Media Queries
+$tablet: 768px;
+$mobile: 480px;
