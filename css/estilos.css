@@ -160,7 +160,7 @@ footer .titulo-footer {
 }
 
 .contacto {
-  background-image: url("../../img/fondo.png");
+  background-image: url(../img/fondo.png);
   background-repeat: no-repeat;
   background-position: center;
   height: 70vh;
@@ -388,7 +388,7 @@ footer .titulo-footer {
 }
 
 .prod {
-  background-image: url("../../img/fondo.png");
+  background-image: url(../img/fondo.png);
   background-repeat: no-repeat;
   background-position: center;
   height: 70vh;
@@ -578,7 +578,7 @@ footer .titulo-footer {
 }
 
 .ofertas {
-  background-image: url("../../img/fondo.png");
+  background-image: url(../img/fondo.png);
   background-repeat: no-repeat;
   background-position: center;
   height: 70vh;
